@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.cipherforge.gematriapro",
+      "sha256_cert_fingerprints": [
+        "66:46:AF:84:CA:38:F6:19:33:19:8B:13:A9:E3:18:01:84:7D:4F:0F:4B:79:7E:10:C9:09:FB:D6:EE:B6:8B:42"
+      ]
+    }
+  }
+]
