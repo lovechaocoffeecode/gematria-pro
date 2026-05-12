@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Gematria Pro</title>
+<title>Gematria Pro v1.1</title>
 <link rel="manifest" href="manifest.json">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -1270,6 +1270,162 @@ const WORD_DB = [
   {w:'endowed',cat:'webster'},{w:'unalienable',cat:'webster'},{w:'self evident',cat:'webster'},
   {w:'we the people',cat:'webster'},{w:'more perfect union',cat:'webster'},
   {w:'life liberty',cat:'webster'},{w:'pursuit of happiness',cat:'webster'},
+
+  // ── EXPANDED AMERICAN ENGLISH (high-value additions for resonance matching)
+
+  // Days of the week
+  {w:'sunday',cat:'american-english'},{w:'monday',cat:'american-english'},
+  {w:'tuesday',cat:'american-english'},{w:'wednesday',cat:'american-english'},
+  {w:'thursday',cat:'american-english'},{w:'friday',cat:'american-english'},
+  {w:'saturday',cat:'american-english'},
+
+  // Months of the year
+  {w:'january',cat:'american-english'},{w:'february',cat:'american-english'},
+  {w:'march',cat:'american-english'},{w:'april',cat:'american-english'},
+  {w:'may',cat:'american-english'},{w:'june',cat:'american-english'},
+  {w:'july',cat:'american-english'},{w:'august',cat:'american-english'},
+  {w:'september',cat:'american-english'},{w:'october',cat:'american-english'},
+  {w:'november',cat:'american-english'},{w:'december',cat:'american-english'},
+
+  // US Presidents (heavily searched on Gematrinator/Gematrix)
+  {w:'washington',cat:'american-english'},{w:'lincoln',cat:'american-english'},
+  {w:'jefferson',cat:'american-english'},{w:'roosevelt',cat:'american-english'},
+  {w:'kennedy',cat:'american-english'},{w:'reagan',cat:'american-english'},
+  {w:'clinton',cat:'american-english'},{w:'bush',cat:'american-english'},
+  {w:'obama',cat:'american-english'},{w:'trump',cat:'american-english'},
+  {w:'biden',cat:'american-english'},{w:'adams',cat:'american-english'},
+  {w:'madison',cat:'american-english'},{w:'jackson',cat:'american-english'},
+  {w:'wilson',cat:'american-english'},{w:'eisenhower',cat:'american-english'},
+  {w:'nixon',cat:'american-english'},{w:'ford',cat:'american-english'},
+  {w:'carter',cat:'american-english'},{w:'johnson',cat:'american-english'},
+
+  // Major world cities
+  {w:'new york',cat:'american-english'},{w:'los angeles',cat:'american-english'},
+  {w:'chicago',cat:'american-english'},{w:'washington dc',cat:'american-english'},
+  {w:'london',cat:'american-english'},{w:'paris',cat:'american-english'},
+  {w:'rome',cat:'american-english'},{w:'jerusalem',cat:'american-english'},
+  {w:'babylon',cat:'american-english'},{w:'cairo',cat:'american-english'},
+  {w:'moscow',cat:'american-english'},{w:'beijing',cat:'american-english'},
+  {w:'tokyo',cat:'american-english'},{w:'berlin',cat:'american-english'},
+  {w:'vatican',cat:'american-english'},{w:'athens',cat:'american-english'},
+  {w:'alexandria',cat:'american-english'},{w:'baghdad',cat:'american-english'},
+  {w:'tehran',cat:'american-english'},{w:'tel aviv',cat:'american-english'},
+  {w:'istanbul',cat:'american-english'},{w:'new jerusalem',cat:'american-english'},
+  {w:'babylon the great',cat:'american-english'},
+
+  // Colors
+  {w:'red',cat:'american-english'},{w:'blue',cat:'american-english'},
+  {w:'green',cat:'american-english'},{w:'yellow',cat:'american-english'},
+  {w:'orange',cat:'american-english'},{w:'purple',cat:'american-english'},
+  {w:'white',cat:'american-english'},{w:'black',cat:'american-english'},
+  {w:'grey',cat:'american-english'},{w:'brown',cat:'american-english'},
+  {w:'pink',cat:'american-english'},{w:'indigo',cat:'american-english'},
+  {w:'violet',cat:'american-english'},{w:'crimson',cat:'american-english'},
+  {w:'scarlet',cat:'american-english'},{w:'turquoise',cat:'american-english'},
+  {w:'amber',cat:'american-english'},{w:'emerald',cat:'american-english'},
+  {w:'sapphire',cat:'american-english'},{w:'ruby',cat:'american-english'},
+
+  // Major world religions
+  {w:'christianity',cat:'american-english'},{w:'judaism',cat:'american-english'},
+  {w:'hinduism',cat:'american-english'},{w:'buddhism',cat:'american-english'},
+  {w:'taoism',cat:'american-english'},{w:'zoroastrianism',cat:'american-english'},
+  {w:'paganism',cat:'american-english'},{w:'gnosticism',cat:'american-english'},
+  {w:'hermeticism',cat:'american-english'},{w:'freemasonry',cat:'american-english'},
+  {w:'rosicrucianism',cat:'american-english'},{w:'thelema',cat:'american-english'},
+  {w:'wicca',cat:'american-english'},{w:'shamanism',cat:'american-english'},
+  {w:'animism',cat:'american-english'},
+
+  // Animals with symbolic meaning
+  {w:'lion',cat:'american-english'},{w:'eagle',cat:'american-english'},
+  {w:'raven',cat:'american-english'},{w:'crow',cat:'american-english'},
+  {w:'owl',cat:'american-english'},{w:'spider',cat:'american-english'},
+  {w:'bear',cat:'american-english'},{w:'fox',cat:'american-english'},
+  {w:'horse',cat:'american-english'},{w:'white horse',cat:'american-english'},
+  {w:'pale horse',cat:'american-english'},{w:'black horse',cat:'american-english'},
+  {w:'red dragon',cat:'american-english'},{w:'leviathan',cat:'american-english'},
+  {w:'behemoth',cat:'american-english'},{w:'unicorn',cat:'american-english'},
+  {w:'griffin',cat:'american-english'},{w:'sphinx',cat:'american-english'},
+
+  // Playing card suits
+  {w:'hearts',cat:'american-english'},{w:'diamonds',cat:'american-english'},
+  {w:'clubs',cat:'american-english'},{w:'spades',cat:'american-english'},
+  {w:'ace',cat:'american-english'},{w:'joker',cat:'american-english'},
+  {w:'king of hearts',cat:'american-english'},{w:'queen of spades',cat:'american-english'},
+  {w:'jack',cat:'american-english'},{w:'trump card',cat:'american-english'},
+
+  // Extended numbers as words
+  {w:'fourteen',cat:'american-english'},{w:'fifteen',cat:'american-english'},
+  {w:'sixteen',cat:'american-english'},{w:'seventeen',cat:'american-english'},
+  {w:'eighteen',cat:'american-english'},{w:'nineteen',cat:'american-english'},
+  {w:'twenty',cat:'american-english'},{w:'twenty one',cat:'american-english'},
+  {w:'twenty two',cat:'american-english'},{w:'twenty three',cat:'american-english'},
+  {w:'twenty four',cat:'american-english'},{w:'thirty',cat:'american-english'},
+  {w:'thirty three',cat:'american-english'},{w:'forty',cat:'american-english'},
+  {w:'forty four',cat:'american-english'},{w:'fifty',cat:'american-english'},
+  {w:'sixty',cat:'american-english'},{w:'sixty six',cat:'american-english'},
+  {w:'seventy',cat:'american-english'},{w:'seventy seven',cat:'american-english'},
+  {w:'eighty eight',cat:'american-english'},{w:'ninety nine',cat:'american-english'},
+  {w:'one hundred eight',cat:'american-english'},{w:'one hundred forty four',cat:'american-english'},
+  {w:'two hundred sixteen',cat:'american-english'},{w:'three hundred sixty',cat:'american-english'},
+  {w:'four hundred forty',cat:'american-english'},{w:'seven hundred seventy seven',cat:'american-english'},
+
+  // ── TAROT (Major and Minor Arcana — heavily used in gematria research)
+
+  // Major Arcana (22 cards)
+  {w:'the fool',cat:'tarot'},{w:'the magician',cat:'tarot'},
+  {w:'the high priestess',cat:'tarot'},{w:'the empress',cat:'tarot'},
+  {w:'the emperor',cat:'tarot'},{w:'the hierophant',cat:'tarot'},
+  {w:'the lovers',cat:'tarot'},{w:'the chariot',cat:'tarot'},
+  {w:'strength',cat:'tarot'},{w:'the hermit',cat:'tarot'},
+  {w:'wheel of fortune',cat:'tarot'},{w:'justice',cat:'tarot'},
+  {w:'the hanged man',cat:'tarot'},{w:'death',cat:'tarot'},
+  {w:'temperance',cat:'tarot'},{w:'the devil',cat:'tarot'},
+  {w:'the tower',cat:'tarot'},{w:'the star',cat:'tarot'},
+  {w:'the moon',cat:'tarot'},{w:'the sun',cat:'tarot'},
+  {w:'judgement',cat:'tarot'},{w:'the world',cat:'tarot'},
+
+  // Minor Arcana — Court Cards
+  {w:'king of wands',cat:'tarot'},{w:'queen of wands',cat:'tarot'},
+  {w:'knight of wands',cat:'tarot'},{w:'page of wands',cat:'tarot'},
+  {w:'king of cups',cat:'tarot'},{w:'queen of cups',cat:'tarot'},
+  {w:'knight of cups',cat:'tarot'},{w:'page of cups',cat:'tarot'},
+  {w:'king of swords',cat:'tarot'},{w:'queen of swords',cat:'tarot'},
+  {w:'knight of swords',cat:'tarot'},{w:'page of swords',cat:'tarot'},
+  {w:'king of pentacles',cat:'tarot'},{w:'queen of pentacles',cat:'tarot'},
+  {w:'knight of pentacles',cat:'tarot'},{w:'page of pentacles',cat:'tarot'},
+
+  // Minor Arcana — Suits (Ace through Ten, all four suits)
+  {w:'ace of wands',cat:'tarot'},{w:'two of wands',cat:'tarot'},
+  {w:'three of wands',cat:'tarot'},{w:'four of wands',cat:'tarot'},
+  {w:'five of wands',cat:'tarot'},{w:'six of wands',cat:'tarot'},
+  {w:'seven of wands',cat:'tarot'},{w:'eight of wands',cat:'tarot'},
+  {w:'nine of wands',cat:'tarot'},{w:'ten of wands',cat:'tarot'},
+  {w:'ace of cups',cat:'tarot'},{w:'two of cups',cat:'tarot'},
+  {w:'three of cups',cat:'tarot'},{w:'four of cups',cat:'tarot'},
+  {w:'five of cups',cat:'tarot'},{w:'six of cups',cat:'tarot'},
+  {w:'seven of cups',cat:'tarot'},{w:'eight of cups',cat:'tarot'},
+  {w:'nine of cups',cat:'tarot'},{w:'ten of cups',cat:'tarot'},
+  {w:'ace of swords',cat:'tarot'},{w:'two of swords',cat:'tarot'},
+  {w:'three of swords',cat:'tarot'},{w:'four of swords',cat:'tarot'},
+  {w:'five of swords',cat:'tarot'},{w:'six of swords',cat:'tarot'},
+  {w:'seven of swords',cat:'tarot'},{w:'eight of swords',cat:'tarot'},
+  {w:'nine of swords',cat:'tarot'},{w:'ten of swords',cat:'tarot'},
+  {w:'ace of pentacles',cat:'tarot'},{w:'two of pentacles',cat:'tarot'},
+  {w:'three of pentacles',cat:'tarot'},{w:'four of pentacles',cat:'tarot'},
+  {w:'five of pentacles',cat:'tarot'},{w:'six of pentacles',cat:'tarot'},
+  {w:'seven of pentacles',cat:'tarot'},{w:'eight of pentacles',cat:'tarot'},
+  {w:'nine of pentacles',cat:'tarot'},{w:'ten of pentacles',cat:'tarot'},
+
+  // Tarot concepts and terminology
+  {w:'major arcana',cat:'tarot'},{w:'minor arcana',cat:'tarot'},
+  {w:'wands',cat:'tarot'},{w:'cups',cat:'tarot'},
+  {w:'swords',cat:'tarot'},{w:'pentacles',cat:'tarot'},
+  {w:'arcana',cat:'tarot'},{w:'divination',cat:'tarot'},
+  {w:'cartomancy',cat:'tarot'},{w:'oracle',cat:'tarot'},
+  {w:'reading',cat:'tarot'},{w:'spread',cat:'tarot'},
+  {w:'celtic cross',cat:'tarot'},{w:'three card spread',cat:'tarot'},
+  {w:'reversed',cat:'tarot'},{w:'upright',cat:'tarot'},
+  {w:'significator',cat:'tarot'},{w:'querent',cat:'tarot'},
 ];
 
 // Pre-compute ordinal values for all DB entries using active cipher
