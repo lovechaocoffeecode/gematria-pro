@@ -76,16 +76,29 @@ body{font-family:'Syne',sans-serif;color:var(--txt);min-height:100vh;position:re
 .char-count{font-family:'Space Mono',monospace;font-size:9px;color:var(--txt3);text-align:right;margin-top:-10px;margin-bottom:8px;padding-right:4px;}
 
 /* ── TAB NAV ── */
-.tab-nav{display:flex;gap:6px;margin-bottom:16px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;}
+.tab-wrap{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+/* ── Top row: All Ciphers centered */
+.tab-row-top{display:flex;justify-content:center;}
+.tab-btn-all{padding:10px 40px;min-height:42px;border-radius:30px;border:1.5px solid var(--border);background:transparent;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;color:var(--txt3);cursor:pointer;transition:all 0.2s;white-space:nowrap;width:100%;text-align:center;}
+.tab-btn-all:hover{border-color:var(--p1);color:var(--p1);}
+.tab-btn-all.active{border-color:transparent;color:#fff;background:linear-gradient(135deg,#7c3aed,var(--t2));box-shadow:0 0 18px rgba(124,58,237,0.35);}
+/* ── Bottom row: 4 sub-tabs with arrows */
+.tab-row-bottom{position:relative;display:flex;align-items:center;gap:0;}
+.tab-arrow{flex-shrink:0;width:30px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--card);border:1.5px solid var(--border);color:var(--txt3);cursor:pointer;transition:all 0.2s;z-index:2;font-size:13px;user-select:none;-webkit-user-select:none;}
+.tab-arrow:hover{border-color:var(--p1);color:var(--p1);}
+.tab-arrow:active{transform:scale(0.92);}
+.tab-arrow.left{border-radius:20px 0 0 20px;border-right:none;}
+.tab-arrow.right{border-radius:0 20px 20px 0;border-left:none;}
+.tab-arrow.hidden{opacity:0.25;pointer-events:none;}
+.tab-nav{display:flex;gap:6px;flex:1;overflow-x:auto;padding:4px 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;border:1.5px solid var(--border);border-left:none;border-right:none;}
 .tab-nav::-webkit-scrollbar{display:none;}
-.tab-btn{flex-shrink:0;padding:7px 14px;border-radius:30px;border:1.5px solid var(--border);background:transparent;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.08em;color:var(--txt3);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+.tab-btn{flex-shrink:0;padding:7px 16px;min-height:36px;border-radius:30px;border:1.5px solid var(--border);background:transparent;font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.08em;color:var(--txt3);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
 .tab-btn:hover{border-color:var(--border2);color:var(--txt);}
 .tab-btn.active{border-color:transparent;color:#fff;}
-.tab-btn.active.t-core{background:linear-gradient(135deg,var(--p2),#6d28d9);}
-.tab-btn.active.t-adv{background:linear-gradient(135deg,var(--t2),#0891b2);}
-.tab-btn.active.t-math{background:linear-gradient(135deg,var(--y2),var(--o2));}
-.tab-btn.active.t-kab{background:linear-gradient(135deg,var(--r2),#be123c);}
-.tab-btn.active.t-all{background:linear-gradient(135deg,#7c3aed,var(--t2));}
+.tab-btn.active.t-core{background:linear-gradient(135deg,var(--p2),#6d28d9);box-shadow:0 0 14px rgba(109,40,217,0.3);}
+.tab-btn.active.t-adv{background:linear-gradient(135deg,var(--t2),#0891b2);box-shadow:0 0 14px rgba(8,145,178,0.3);}
+.tab-btn.active.t-math{background:linear-gradient(135deg,var(--y2),var(--o2));box-shadow:0 0 14px rgba(234,179,8,0.3);}
+.tab-btn.active.t-kab{background:linear-gradient(135deg,var(--r2),#be123c);box-shadow:0 0 14px rgba(190,18,60,0.3);}
 
 /* ── HERO RESULT ── */
 .hero{background:var(--card);border:1.5px solid var(--border2);border-radius:18px;padding:24px 20px 20px;margin-bottom:14px;position:relative;overflow:hidden;transition:border-color 0.3s;}
@@ -117,8 +130,8 @@ body{font-family:'Syne',sans-serif;color:var(--txt);min-height:100vh;position:re
 .section-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
 .section-title{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.3em;color:var(--txt3);text-transform:uppercase;}
 .section-count{font-family:'Space Mono',monospace;font-size:9px;color:var(--txt3);}
-.cipher-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
-.cipher-card{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
+.cipher-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+.cipher-card{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:14px 14px;min-height:80px;cursor:pointer;transition:all 0.2s;position:relative;overflow:hidden;}
 .cipher-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity 0.2s;}
 .cipher-card:hover{border-color:var(--border2);transform:translateY(-1px);}
 .cipher-card:hover::before{opacity:1;}
@@ -306,12 +319,22 @@ body{font-family:'Syne',sans-serif;color:var(--txt);min-height:100vh;position:re
   </div>
 
   <!-- Tab Nav -->
-  <div class="tab-nav">
-    <button class="tab-btn active t-all" data-tab="all">All Ciphers</button>
-    <button class="tab-btn t-core" data-tab="core">Core English</button>
-    <button class="tab-btn t-adv" data-tab="adv">Advanced</button>
-    <button class="tab-btn t-math" data-tab="math">Mathematical</button>
-    <button class="tab-btn t-kab" data-tab="kab">Kabbalah</button>
+  <div class="tab-wrap">
+    <!-- Row 1: All Ciphers centered -->
+    <div class="tab-row-top">
+      <button class="tab-btn-all active" data-tab="all" id="tabAll">✦ All Ciphers ✦</button>
+    </div>
+    <!-- Row 2: Sub-tabs with arrows -->
+    <div class="tab-row-bottom">
+      <button class="tab-arrow left hidden" id="tabArrowLeft" aria-label="Scroll left">&#8592;</button>
+      <div class="tab-nav" id="tabNav">
+        <button class="tab-btn t-core" data-tab="core">Core English</button>
+        <button class="tab-btn t-adv" data-tab="adv">Advanced</button>
+        <button class="tab-btn t-math" data-tab="math">Mathematical</button>
+        <button class="tab-btn t-kab" data-tab="kab">Kabbalah</button>
+      </div>
+      <button class="tab-arrow right" id="tabArrowRight" aria-label="Scroll right">&#8594;</button>
+    </div>
   </div>
 
   <!-- Hero result -->
@@ -650,8 +673,56 @@ const pillCons=document.getElementById('pillCons');
 mainIn.addEventListener('input',()=>{currentInput=mainIn.value;update();});
 clearBtn.addEventListener('click',()=>{mainIn.value='';currentInput='';update();mainIn.focus();});
 
+// ── Tab nav arrow scroll
+(function(){
+  const nav = document.getElementById('tabNav');
+  const btnL = document.getElementById('tabArrowLeft');
+  const btnR = document.getElementById('tabArrowRight');
+  if(!nav||!btnL||!btnR) return;
+
+  function updateArrows(){
+    const atStart = nav.scrollLeft <= 4;
+    const atEnd = nav.scrollLeft >= nav.scrollWidth - nav.clientWidth - 4;
+    btnL.classList.toggle('hidden', atStart);
+    btnR.classList.toggle('hidden', atEnd);
+  }
+
+  btnL.addEventListener('click', ()=>{
+    nav.scrollBy({left: -140, behavior:'smooth'});
+  });
+  btnR.addEventListener('click', ()=>{
+    nav.scrollBy({left: 140, behavior:'smooth'});
+  });
+
+  nav.addEventListener('scroll', updateArrows, {passive:true});
+  window.addEventListener('resize', updateArrows);
+
+  // Mouse wheel horizontal scroll on the nav bar
+  nav.addEventListener('wheel', (e)=>{
+    if(e.deltaY !== 0){
+      e.preventDefault();
+      nav.scrollBy({left: e.deltaY * 2, behavior:'smooth'});
+    }
+  }, {passive:false});
+
+  // Initial state
+  setTimeout(updateArrows, 100);
+})();
+
+// All Ciphers top button
+const tabAllBtn = document.getElementById('tabAll');
+if(tabAllBtn){
+  tabAllBtn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    tabAllBtn.classList.add('active');
+    activeTab='all';
+    updateGrid();
+  });
+}
+// Sub-tab buttons
 document.querySelectorAll('.tab-btn').forEach(btn=>{
   btn.addEventListener('click',()=>{
+    if(tabAllBtn) tabAllBtn.classList.remove('active');
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
     activeTab=btn.dataset.tab;
