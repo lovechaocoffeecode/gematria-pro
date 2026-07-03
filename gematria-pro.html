@@ -30,6 +30,7 @@
   --g1:#4ade80;--g2:#16a34a;
   --o1:#fb923c;--o2:#ea580c;
   --pink:#f472b6;
+  --beige:#bebe7e;
   --txt:#e2d9f3;
   --txt2:#a394c4;
   --txt3:#6b5c8f;
@@ -145,10 +146,12 @@ body{font-family:'Syne',sans-serif;color:var(--txt);min-height:100vh;position:re
 .c-p{color:var(--p1)!important;} .c-t{color:var(--t1)!important;} .c-y{color:var(--y1)!important;}
 .c-g{color:var(--g1)!important;} .c-r{color:var(--r1)!important;} .c-o{color:var(--o1)!important;}
 .c-pink{color:var(--pink)!important;} .c-w{color:var(--white)!important;}
+.c-beige{color:var(--beige)!important;}
 /* Dot colors */
 .dot-p{background:var(--p1);} .dot-t{background:var(--t1);} .dot-y{background:var(--y1);}
 .dot-g{background:var(--g1);} .dot-r{background:var(--r1);} .dot-o{background:var(--o1);}
 .dot-pink{background:var(--pink);}
+.dot-beige{background:var(--beige);}
 
 /* ── BREAKDOWN ── */
 .breakdown{margin-bottom:14px;}
@@ -495,9 +498,6 @@ const HEBREW_VALS=[1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400,
 // ALW Kabbalah (Carol Smith 1974): A=1,L=2,W=3,B=4,M=5,X=6,C=7,N=8,Y=9,D=10,O=11,Z=12,E=13,P=14,F=15,Q=16,G=17,R=18,H=19,S=20,I=21,T=22,J=23,U=24,K=25,V=26
 const ALW_VALS=(()=>{const m={};'ALWBMXCNYDOZEPFQGRHSITJUKV'.split('').forEach((c,i)=>m[c]=i+1);return m;})();
 
-// Keypad cipher (phone pad)
-const KEYPAD_MAP={A:2,B:2,C:2,D:3,E:3,F:3,G:4,H:4,I:4,J:5,K:5,L:5,M:6,N:6,O:6,P:7,Q:7,R:7,S:7,T:8,U:8,V:8,W:9,X:9,Y:9,Z:9};
-
 function ordVal(c){return c.charCodeAt(0)-64;} // A=1..Z=26
 
 const CIPHERS={
@@ -573,9 +573,9 @@ const CIPHERS={
   alw:{name:'ALW Kabbalah',short:'ALW Kab.',group:'kab',color:'c-r',dot:'dot-r',
     desc:'Carol Smith 1974 English Qaballa',
     fn:(s)=>s.split('').map(c=>{const u=c.toUpperCase();return(/[A-Z]/.test(u))?(ALW_VALS[u]||0):null;})},
-  keypad:{name:'Keypad',short:'Keypad',group:'kab',color:'c-pink',dot:'dot-pink',
-    desc:'Telephone pad mapping (ABC=2…)',
-    fn:(s)=>s.split('').map(c=>{const u=c.toUpperCase();return(/[A-Z]/.test(u))?(KEYPAD_MAP[u]||0):null;})},
+  alphanumeric:{name:'Alphanumeric',short:'Alphanum',group:'kab',color:'c-beige',dot:'dot-beige',
+    desc:'CCRU Alphanumeric Qabbala (0-9, A-Z)',
+    fn:(s)=>s.split('').map(c=>{const u=c.toUpperCase();return(/[A-Z]/.test(u))?(ordVal(u)+9):null;})},
 };
 
 // For "all" tab ordering
